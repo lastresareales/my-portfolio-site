@@ -1,11 +1,12 @@
 /**
- * Portfolio component
+ * I am new to coding and am learning how to create a portfolio site to share my projects and experience. This is a great way for me to share my work with others, and also to reflect on what I've learned and created.
  *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
+ * I spend hours learning about coding and cybersecurity, and I want to share that knowledge with others. I also want to share my projects and experience, and to connect with other people who are interested in coding and cybersecurity.
+ * I don't have many projects going on right now, but I am working on some projects that I hope to share soon.
+ * 
  *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
+ * 
+ * 
  */
 
 import React from "react";
@@ -31,28 +32,16 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "The De-buggers Dilemma",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "An interactive story about debugging and problem-solving in software development.",
+    url: "",
   },
   {
     title: "Web Development for Beginners",
     description:
       "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
     url: "https://github.com/microsoft/web-dev-for-beginners",
-  },
-  {
-    title: "My Resume Site",
-    description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
-  },
-  {
-    title: "GitHub Codespaces and github.dev",
-    description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
   },
 ];
 
