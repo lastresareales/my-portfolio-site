@@ -13,11 +13,8 @@
     "server": "npm start"
   },
 
-  // Configure tool-specific properties.
   "customizations": {
-    // Configure properties specific to VS Code.
     "vscode": {
-      // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
@@ -29,14 +26,22 @@
         "emmet.includeLanguages": {
           "javascript": "javascriptreact"
         },
-        "emmet.triggerExpansionOnTab": true
+        "emmet.triggerExpansionOnTab": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true,
+          "source.organizeImports": "explicit"
+        }
       }
     }
   },
 
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/azure-cli:1": {}
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
   },
 
   "portsAttributes": {
@@ -46,5 +51,15 @@
     }
   },
 
-  "forwardPorts": [1234]
-}
+  "forwardPorts": [1234],
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+  "containerEnv": {
+    "NODE_ENV": "development"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.devcontainer/.vscode,target=/home/vscode/.vscode,type=bind,consistency=cached"
+  ]
+} 
