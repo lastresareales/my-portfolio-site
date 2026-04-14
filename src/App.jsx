@@ -4,9 +4,11 @@
  * To contain application wide settings, routes, state, etc.
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import About from "./Components/About";
+import Blog from "./Components/Blog";
+import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -39,12 +41,35 @@ const primaryColor = "#4E567E";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setIsDark(savedDarkMode);
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    localStorage.setItem("darkMode", !isDark);
+    if (!isDark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  };
+
   return (
     <div id="main">
-      <Header />
+      <Header isDark={isDark} toggleDarkMode={toggleDarkMode} />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Portfolio />
+      <Blog />
+      <Contact email={siteProps.email} />
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>
   );

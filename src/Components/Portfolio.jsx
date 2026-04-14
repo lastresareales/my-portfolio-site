@@ -9,7 +9,7 @@
  * 
  */
 
-import React from "react";
+import React, { useState } from "react";
 
 /**
  * Desk image
@@ -36,34 +36,101 @@ const projectList = [
     description:
       "An interactive story about debugging and problem-solving in software development.",
     url: "",
+    tags: ["Game", "JavaScript"],
   },
   {
     title: "Web Development for Beginners",
     description:
       "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
     url: "https://github.com/microsoft/web-dev-for-beginners",
+    tags: ["Web", "Education"],
   },
 ];
 
 const Portfolio = () => {
+  const [selectedTag, setSelectedTag] = useState(null);
+
+  // Get all unique tags
+  const allTags = [...new Set(projectList.flatMap(p => p.tags))];
+
+  // Filter projects based on selected tag
+  const filteredProjects = selectedTag
+    ? projectList.filter(p => p.tags.includes(selectedTag))
+    : projectList;
+
   return (
     <section className="padding" id="portfolio">
       <h2 style={{ textAlign: "center" }}>Portfolio</h2>
+      
+      {/* Filter buttons */}
+      <div style={{ textAlign: "center", margin: "2rem 0", display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+        <button
+          onClick={() => setSelectedTag(null)}
+          style={{
+            padding: "0.5rem 1rem",
+            border: selectedTag === null ? "2px solid #4E567E" : "1px solid #cccccc",
+            borderRadius: "20px",
+            background: selectedTag === null ? "#4E567E" : "transparent",
+            color: selectedTag === null ? "#ffffff" : "inherit",
+            cursor: "pointer",
+            fontWeight: "600",
+            transition: "all 0.3s ease",
+          }}
+        >
+          All
+        </button>
+        {allTags.map(tag => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            style={{
+              padding: "0.5rem 1rem",
+              border: selectedTag === tag ? "2px solid #4E567E" : "1px solid #cccccc",
+              borderRadius: "20px",
+              background: selectedTag === tag ? "#4E567E" : "transparent",
+              color: selectedTag === tag ? "#ffffff" : "inherit",
+              cursor: "pointer",
+              fontWeight: "600",
+              transition: "all 0.3s ease",
+            }}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
       <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
         <div style={{ maxWidth: "40%", alignSelf: "center" }}>
           <img
             src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
+            style={{ height: "90%", width: "100%", objectFit: "cover", borderRadius: "10px" }}
             alt={imageAltText}
           />
         </div>
         <div className="container">
-          {projectList.map((project) => (
+          {filteredProjects.map((project) => (
             <div className="box" key={project.title}>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
               </a>
               <p className="small">{project.description}</p>
+              <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center", flexWrap: "wrap", marginTop: "1rem" }}>
+                {project.tags.map(tag => (
+                  <span
+                    key={tag}
+                    style={{
+                      padding: "0.25rem 0.75rem",
+                      background: "#4E567E",
+                      color: "#ffffff",
+                      borderRadius: "15px",
+                      fontSize: "0.75rem",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

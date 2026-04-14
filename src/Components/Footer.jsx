@@ -50,7 +50,8 @@ const Footer = (props) => {
         gap: "2.5rem",
         padding: "5rem 0 3rem",
         backgroundColor: primaryColor,
-        width: "100vw"
+        width: "100vw",
+        color: "#ffffff",
       }}
     >
       <div
@@ -58,20 +59,43 @@ const Footer = (props) => {
           display: "flex",
           justifyContent: "center",
           gap: "2.5rem",
+          flexWrap: "wrap",
         }}
       >
         {email && (
-          <a href={`mailto:${email}`}>
+          <a
+            href={`mailto:${email}`}
+            title="Email"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+          >
             <img src={envelopeIcon} alt="email" className="socialIcon" />
           </a>
         )}
         {devDotTo && (
-          <a href={`https://dev.to/${devDotTo}`} target="_blank" rel="noopener noreferrer">
+          <a
+            href={`https://dev.to/${devDotTo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Dev.to"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+          >
             <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
           </a>
         )}
         {gitHub && (
-          <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
+          <a
+            href={`https://github.com/${gitHub}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+          >
             <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
           </a>
         )}
@@ -80,6 +104,10 @@ const Footer = (props) => {
             href={`https://www.instagram.com/${instagram}`}
             target="_blank"
             rel="noopener noreferrer"
+            title="Instagram"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
           >
             <img src={instagramIcon} alt="Instagram" className="socialIcon" />
           </a>
@@ -89,17 +117,37 @@ const Footer = (props) => {
             href={`https://www.linkedin.com/in/${linkedIn}`}
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
           >
             <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
           </a>
         )}
         {medium && (
-          <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
+          <a
+            href={`https://medium.com/@${medium}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Medium"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+          >
             <img src={mediumIcon} alt="Medium" className="socialIcon" />
           </a>
         )}
         {twitter && (
-          <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
+          <a
+            href={`https://twitter.com/${twitter}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Twitter"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
+          >
             <img src={twitterIcon} alt="Twitter" className="socialIcon" />
           </a>
         )}
@@ -108,6 +156,10 @@ const Footer = (props) => {
             href={`https://www.youtube.com/c/${youTube}`}
             target="_blank"
             rel="noopener noreferrer"
+            title="YouTube"
+            style={{ transition: "transform 0.3s ease" }}
+            onMouseEnter={(e) => e.target.style.transform = "scale(1.2)"}
+            onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
           >
             <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
           </a>
