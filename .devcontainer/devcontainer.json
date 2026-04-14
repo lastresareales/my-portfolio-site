@@ -29,7 +29,7 @@
         "emmet.triggerExpansionOnTab": true,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-          "source.fixAll": true,
+          "source.fixAll": "always",
           "source.organizeImports": "explicit"
         }
       }
