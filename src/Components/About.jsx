@@ -1,6 +1,8 @@
-/**I am currently a Computer Science student, but I have a strong interest 
- * in ML/AI & Cybersecurity. I am passionate aboutgrowing in this field, 
- * and I am eager to see where my passion takes me in the future. **/
+/**
+ * I am currently a Computer Science student, but I have a strong interest
+ * in ML/AI & Cybersecurity. I am passionate about growing in this field,
+ * and I am eager to see where my passion takes me in the future.
+ */
 
 
 import React from "react";
@@ -25,8 +27,8 @@ const imageAltText = "purple and blue abstract background";
 const description =
   "I am a Computer Science student with a passion for learning and growth. I am eager to explore the world of technology and contribute to innovative projects that make a positive impact on society.";
 /**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
+ * List of some skills or technologies you work on, are learning,
+ * or passionate about.
  */
 const skillsList = [
   "Cybersecurity",

@@ -27,23 +27,22 @@ const imageAltText = "desktop with books and laptop";
 /**
  * Project list
  *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
+ * An array of objects that will be used to display your project links.
+ * Below is a sample; update to reflect links you'd like to highlight.
  */
 const projectList = [
   {
-    title: "The De-buggers Dilemma",
+    title: "The De-buggers Delusion",
     description:
-      "An interactive story about debugging and problem-solving in software development.",
-    url: "",
+      "My first coding project, when I audited Harvard's CS50. An interactive story about debugging and problem-solving in software development.",
+    url: "https://scratch.mit.edu/projects/1295831835/embed",
     tags: ["Game", "JavaScript"],
   },
   {
-    title: "Web Development for Beginners",
-    description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
-    tags: ["Web", "Education"],
+    title: "Action Engine",
+    description: "A project of mine, designed to maximize productivity.",
+    url: "https://github.com/lastresareales/Action-Engine/tree/main/Action-Engine",
+    tags: ["Project", "Web App"],
   },
 ];
 
